@@ -25,7 +25,7 @@ let movieSearch = siteSearch.value
 
 async function getMovieID(searchInput){
     try{
-     const APIRespond = await fetch(`http://www.omdbapi.com/?s=${searchInput}&type=movie&apikey=311954f3`)
+     const APIRespond = await fetch(`https://www.omdbapi.com/?s=${searchInput}&type=movie&apikey=311954f3`)
      if(!APIRespond.ok) {
         const text = await APIRespond.text()
         throw Error(text)
@@ -56,7 +56,7 @@ async function getMovieID(searchInput){
 function getMovieData(array){
     array.forEach(function(idSearch){
         
-        fetch(`http://www.omdbapi.com/?i=${idSearch}&type=movie&plot=full&apikey=311954f3`)
+        fetch(`https://www.omdbapi.com/?i=${idSearch}&type=movie&plot=full&apikey=311954f3`)
         .then(resTwo => resTwo.json())
         .then(dataTwo => {
             renderMovies = [dataTwo]
@@ -184,7 +184,7 @@ function addMovieToWatchList(movieToAdd){
 
     async function fetchData(fetchMovieId) {
         try {
-          const response = await fetch(`http://www.omdbapi.com/?i=${fetchMovieId}&type=movie&plot=full&apikey=311954f3`)
+          const response = await fetch(`https://www.omdbapi.com/?i=${fetchMovieId}&type=movie&plot=full&apikey=311954f3`)
           const data = await response.json()
           movieWatchListArray = JSON.parse(localStorage.getItem("listOfMovies") || "[]")
           localStorage.setItem("movieWatchListApi", JSON.stringify(data))

@@ -19,7 +19,7 @@ document.addEventListener('click', function(e){
         renderMovieWatchList = JSON.parse(listOfMovies)
         if(renderMovieWatchList.length === 0){
             document.getElementById('watch-list').innerHTML = `
-            <div>
+            <div class="search-result">
             <p>Your watchlist is looking a little empty...</p>
             <i class="fa-solid fa-circle-plus"></i>
             <a class="watchlist-link" href="index.html">Let's add some movies!</a>
