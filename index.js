@@ -5,7 +5,11 @@ let renderMovies = []
 let movieWatchListArray = []
 let addBtn = ""
 let removeBtn = ""
+
+
 // Event Listner for Movie Search Fetch Request
+
+
 document.addEventListener('click', function(e){
     if(e.target.dataset.full){
         renderReadMoreText(e.target.dataset.full)

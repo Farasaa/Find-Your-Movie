@@ -1,5 +1,5 @@
 let renderMovieWatchList = []
-
+const hideWatchList = document.getElementById("hide-watch-list")
 
 // event listners
 document.addEventListener('click', function(e){
@@ -25,6 +25,7 @@ document.addEventListener('click', function(e){
             <a class="watchlist-link" href="index.html">Let's add some movies!</a>
             `    
         }else
+            hideWatchList.style.display = 'none'
             renderMovieWatchList.forEach(movie =>{
             readMoreHtmlLength = movie.Plot.length
             readMoreText = movie.Plot
@@ -129,5 +130,11 @@ document.addEventListener('click', function(e){
         localStorage.setItem("listOfMovies", updatedWatchListRender)
         populateList()
     }
+    function hideIntro(){
+        if(renderMovieWatchList.length === 1){
+           hideWatchList.style.display = 'none'
+        }
+    }
 
+        hideIntro()
       populateList()
